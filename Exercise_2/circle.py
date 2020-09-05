@@ -1,23 +1,16 @@
 import math
 
-"""
 class Circle(object):
-    #Circle with radius, area and diameter.
 
     def __init__(self, radius=1):
-        self.radius = radius
-        self.diameter = self.radius * 2
-        self.area = math.pi * self.radius ** 2
+        if radius > 0:
+            self.radius = radius
+        else:
+            raise ValueError('Radius cannot be negative')
     
     def __repr__(self):
         return f"Circle({self.radius})"
-"""
 
-class Circle(object):
-
-    def __init__(self, radius=1):
-        self.radius = radius
-    
     @property
     def diameter(self):
         return self.radius * 2
@@ -30,5 +23,13 @@ class Circle(object):
     def area(self):
         return math.pi * self.radius ** 2
 
-    def __repr__(self):
-        return f"Circle({self.radius})"
+    @property 
+    def radius(self):
+        return self._radius
+    
+    @radius.setter 
+    def radius(self, radius):
+        if radius > 0:
+            self._radius = radius
+        else:
+            raise ValueError('radius cannot be negative')
