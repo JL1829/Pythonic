@@ -13,7 +13,7 @@ Write a function that accpets a sequance(a list for example) and return a new it
 
 There are three option bonues for tis exercise.
 
-## Bonues 1
+## Bonus 1
 Make sure the function accept any iterable as an argument, not just a sequance(which mean you can't use index to loop).
 
 Here's an example witha generator expression, which is a lazy iterable: 
@@ -22,7 +22,7 @@ Here's an example witha generator expression, which is a lazy iterable:
 [(1, None), (4, 1), (9, 4)]
 ```
 
-## Bonues 2
+## Bonus 2
 The function can return a lazy iterator(for examaple a generator) instead of of a `list`. 
 
 This should allow the `with_previous` function to accept infinitely long iterables. If the function returns an iterabor, the below should work: 
@@ -31,7 +31,7 @@ This should allow the `with_previous` function to accept infinitely long iterabl
 (1, None)
 ```
 
-## Bonues 3
+## Bonus 3
 Allow the function to accept an optional `fillvalue` keywork-only argument(default to `None`)
 The below should work:
 ```python

@@ -99,3 +99,17 @@ See if you can make your function relatively memory efficient (if you're looping
 
 Write a function that accpets a sequance(a list for example) and return a new iterable(anything you can loop over) that includes a tuple of each item and the previous item(the item just before it). The first `previous item` should be `None`.
 
+### Bonus 1
+Make sure the function accept any iterable as an argument, not just a sequance(which mean you can't use index to loop).
+
+### Bonus 2
+The function can return a lazy iterator(for examaple a generator) instead of of a `list`. 
+
+### Bonus 3
+Allow the function to accept an optional `fillvalue` keywork-only argument(default to `None`)
+
+This new argument should be allowed as a keyword argument. The following should raise error: 
+```python
+>>> list(with_previous([1, 2, 3], 0))
+Traceback (most recent call last): File "", line 1, in TypeError: with_previous() takes 1 positional argument but 2 were given
+```
