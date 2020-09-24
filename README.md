@@ -1,7 +1,7 @@
 # Pythonic Python Exercise. 
 > Make your code more pythonic, modular, readability, elegant. 
 
-## Exercise 1
+## [Exercise 1](https://github.com/JL1829/Pythonic/blob/master/Exercise_1/ProblemStatement.md)
 To write a function that accepts two lists-of-lists of numbers and returns one list-of-lists with each of the corresponding numbers in the two given lists-of-lists added together. 
 
 It should work something like this: 
@@ -23,26 +23,12 @@ There's two bonuses:
 ### Bonus 1
 Modify your `add()` function to accept non-fixed length argument (`*args`)
 
-```python
->>> matrix1 = [[1, 9], [7, 3]]
->>> matrix2 = [[5, -4], [3, 3]]
->>> matrix3 = [[2, 3], [-3, 1]]
->>> add(matrix1, matrix2, matrix3)
-[[8, 8], [7, 7]]
-```
 
 ### Bonus 2
 Raise `ValueError` if the given matrices is not the same shape. 
-```python
->>> add([[1, 9], [7, 3]], [[1, 2], [3]])
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "add.py", line 10, in add
-    raise ValueError("Given matrices are not the same size.")
-ValueError: Given matrices are not the same size.
-```
 
-## Exercise 2
+
+## [Exercise 2](https://github.com/JL1829/Pythonic/blob/master/Exercise_2/ProblemStatement.md)
 Make a class that represents a Circle. 
 
 The Circle should have a `radius`, a `diameter`, and an `area`. It should also have a nice string representation . 
@@ -77,55 +63,39 @@ There are $3$ bonuses for this exercise.
 
 For the first bonus, make sure when the `radius` of your class changes that the `diameter` and `area` both change as well: 
 
-```python
->>> c = Circle(2)
->>> c.radius
-2
->>> c.diameter
-4
-
->>> c.radius = 1
->>> c.diameter
-2
->>> c.area
-3.1415926
->>> c
-Circle(1)
-```
-
 ### Bonus 2
 
 For the 2nd bonus, make sure you can set the `diameter` attribute in your class and the `radius` will update accordingly. Also make sure also that you cannot set the `area`(setting area should raise an `AttributeError`):
 
-```python
->>> c = Circle(1)
->>> c.diameter = 4
->>> c.radius
-2.0
->>> c.area = 45.678
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "circle.py", line 16, in radius
-AttributeError: can't set attribute
-```
 
 ### Bonus 3
 For the 3rd bonus, make sure your `radius` cannot be set to negative number. You should raise a `ValueError` exception with the Error message: `Radius cannot be negative`. 
-
-```python
->>> c = Circle(5)
->>> c.radius = 3
->>> c.radius = -2
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "circle.py", line 27, in radius
-    raise ValueError("Radius cannot be negative")
-ValueError: Radius cannot be negative
->>> c = Circle (-10)
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-  File "circle.py", line 27, in radius
-    raise ValueError("Radius cannot be negative")
-ValueError: Radius cannot be negative
-```
 This mean that `diameter` cannot be negative either (and seeting `diameter` to a negative number should also raise a `ValueError`)
+
+
+## [Exercise 4](https://github.com/JL1829/Pythonic/blob/master/Exercise_4/ProblemStatement.md)
+
+Write a function that takes a sequence (like a `list`, `string` or `tuple`) and a number `n` and returns the last `n` elements from the given sequance, as a `list`. 
+
+For Example:
+```python
+>>> tail([1, 2, 3, 4, 5], 3)
+[3, 4, 5]
+>>> tail('hello', 2)
+['l', 'o']
+>>> tail('hello', 0)
+[]
+```
+### Bonus 1
+As a bonus, make the function return an empty list for negative values of `n`:
+
+### Bonus 2
+make sure the function works with any iterable, not just sequances. 
+Should make sure it don't loop at all if `n` is `0` or negative. 
+
+See if you can make your function relatively memory efficient (if you're looping over a very long iterable, don't store the entire thing in memory)
+
+## [Exercise 5](https://github.com/JL1829/Pythonic/blob/master/Exercise_5/ProblemStatement.md)
+
+Write a function that accpets a sequance(a list for example) and return a new iterable(anything you can loop over) that includes a tuple of each item and the previous item(the item just before it). The first `previous item` should be `None`.
+
