@@ -113,3 +113,25 @@ This new argument should be allowed as a keyword argument. The following should 
 >>> list(with_previous([1, 2, 3], 0))
 Traceback (most recent call last): File "", line 1, in TypeError: with_previous() takes 1 positional argument but 2 were given
 ```
+
+## [Exercise 6](https://github.com/JL1829/Pythonic/blob/master/Exercise_6/ProblemStatement.md)
+
+To write a function that accepts an iterable and an object and returns a new iterable with all items from the original iterable except any item at the beginning of the iterable which is equal to the object should be skipped. 
+
+**Example**
+
+```python
+>>> lstrip([0, 0, 1, 0, 2, 3], 0)
+[1, 0, 2, 3]
+>>> lstrip('  hello ', ' ')
+['h', 'e', 'l', 'l', 'o', ' ']
+```
+
+### Bonus 1
+Return an iterable(for example, a generator) from the function `lstrip` instead of a list. 
+
+### Bonus 2
+
+Return a lazy iterable: allow the `lstrip` function to accept a function as it's 2nd argument which will determine whether the item should be stripped. 
+
+The function will be executed with each item individually and as long as the function return `True` the iterable should be removed from the beginning of the iterable. 
